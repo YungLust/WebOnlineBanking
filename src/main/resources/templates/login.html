@@ -8,18 +8,19 @@
 
     <!-- link css -->
     <link rel="stylesheet" type="text/css" media="all"
-          href="../static/css/login.css" th:href="@{/css/login.css}" />
+          href="../static/css/styles.css" th:href="@{/css/styles.css}" />
 
 </head>
+
 <body>
-<div class="login-container">
+<div class="form-container">
     <h1>Login</h1>
     <form th:action="@{/login}" method="post">
         <input type="text" id="username" name="username" placeholder="Enter username" required>
         <br>
         <input type="password" id="password" name="password" placeholder="Enter password" required>
         <br>
-        <button type="submit" class="btn">Login</button>
+        <button type="submit" class="submit-btn">Login</button>
     </form>
     <div th:if="${message}" th:text="${message}" class="error-message"></div>
     <p>Don't have an account? <a class="link" th:href="@{/register}">Register here</a></p>

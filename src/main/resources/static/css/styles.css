@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+:root{
+    --blue: #2aefe7;
+    --gray: #333;
+    --light-gray: #393939;
+    --blue-white: #d8deec;
+}
+
+/* ————    General styles    ———— */
+
+body {
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--gray);
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+p {
+    font-size: 14px;
+    color: #666;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 500;
+    margin: 15px;
+    color: var(--blue);
+}
+
+
+
+/* ————    Video styles    ———— */
+
+/* Video container */
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+/* Video itself */
+#welcome-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* ————    <a> Button styles    ———— */
+
+.buttons-container {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.btn {
+    display: inline-block; /* Ensure the <a> behaves like a block for width and padding */
+    text-decoration: none;
+    background-color: white;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    width: 150px;
+    padding: 15px;
+    margin: 15px;
+    cursor: pointer;
+    box-shadow: 0 0 0 transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+    border: solid 1px var(--blue);
+    box-shadow: 0 0 5px #2aefe7aa, 0 0 20px var(--blue);
+    transform: scale(1.05);
+}
+
+
+/* ————    Form styles    ———— */
+
+.form-container {
+    background-color: var(--light-gray);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    align-content: center;
+    aspect-ratio: 1 / 1;
+}
+
+input {
+    background-color: var(--blue-white);
+    width: 300px;
+    padding: 15px;
+    margin: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+input:focus{
+    border: solid 1px var(--blue);
+    outline: none;
+    box-shadow: 0 0 10px #2aefe7;
+}
+
+.submit-btn {
+    box-sizing: content-box; /* apply box-sizing so btn have the same width as input */
+    background-color: var(--blue-white);
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    width: 300px;
+    padding: 15px;
+    margin: 15px;
+    cursor: pointer;
+    box-shadow: 0 0 0 transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+.submit-btn:hover {
+    border: solid 1px var(--blue);
+    box-shadow: 0 0 15px var(--blue);
+    transform: scale(1.05);
+}
+
+
+/* ————    simple <a> link style    ———— */
+
+a.link {
+    color: #2aefe7;
+    text-decoration: none;
+}
+
+a.link:hover {
+    text-decoration: underline;
+}
