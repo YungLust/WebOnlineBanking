@@ -1,0 +1,89 @@
+:root{
+    --blue: #2aefe7;
+    --gray: #333;
+    --light-gray: #393939;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--gray);
+}
+
+.login-container {
+    background-color: var(--light-gray);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    align-content: center;
+    aspect-ratio: 1 / 1;
+}
+
+h1 {
+    font-size: 36px;
+    margin: 15px;
+    color: var(--blue)
+}
+
+input {
+    width: 300px;
+    padding: 15px;
+    margin: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+input:focus{
+    border: solid 1px var(--blue);
+    outline: none;
+    box-shadow: 0 0 10px #2aefe7;
+}
+
+.btn {
+    box-sizing: content-box; /* apply box-sizing so btn have the same width as input */
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    width: 300px;
+    padding: 15px;
+    margin: 15px;
+    cursor: pointer;
+    box-shadow: 0 0 0 transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+    border: solid 1px var(--blue);
+    box-shadow: 0 0 15px var(--blue);
+    transform: scale(1.05);
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+p {
+    font-size: 14px;
+    color: #666;
+}
+
+a.link {
+    color: #2aefe7;
+    text-decoration: none;
+}
+
+a.link:hover {
+    text-decoration: underline;
+}

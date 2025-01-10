@@ -1,0 +1,30 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>LitBank| Welcome</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <!-- link css -->
+    <link rel="stylesheet" type="text/css" media="all"
+          href="../static/css/style.css" th:href="@{/css/style.css}" />
+
+</head>
+<body>
+
+<!-- background video -->
+<div class="video-container">
+    <video autoplay muted loop id="welcome-video">
+        <source th:src="@{/assets/matrix_bg_full-size.mp4}" type="video/mp4">
+    </video>
+</div>
+
+<!-- buttons -->
+<div class="buttons-container">
+    <a th:href="@{/login}" class="btn">Login</a>
+    <a th:href="@{/register}" class="btn">Register</a>
+</div>
+
+</body>
+</html>

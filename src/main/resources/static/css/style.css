@@ -1,0 +1,66 @@
+:root{
+    --blue: #2aefe7;
+    --gray: #333;
+    --light-gray: #393939;
+}
+
+/* General styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--gray); /* fallback in case video fails to load */
+    color: white;
+    overflow: hidden;
+}
+
+/* Video container */
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+#welcome-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Buttons container */
+.buttons-container {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.btn {
+    display: inline-block; /* Ensure the <a> behaves like a block for width and padding */
+    text-decoration: none;
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    width: 150px;
+    padding: 15px;
+    margin: 15px;
+    cursor: pointer;
+    box-shadow: 0 0 0 transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+    border: solid 1px var(--blue);
+    box-shadow: 0 0 5px #2aefe7aa, 0 0 20px var(--blue);
+    transform: scale(1.05);
+}
