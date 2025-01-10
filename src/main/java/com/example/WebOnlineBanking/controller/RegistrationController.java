@@ -32,7 +32,8 @@ public class RegistrationController {
             User user = this.userService.register(username, password);
             session.setAttribute("currentUser", user);
             return "redirect:/accounts/create";
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             model.addAttribute("message", e.getMessage());
             return "register";
         }

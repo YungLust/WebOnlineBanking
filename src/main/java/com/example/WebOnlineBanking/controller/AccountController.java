@@ -23,7 +23,8 @@ public class AccountController {
         User currentUser = (User)session.getAttribute("currentUser");
         if (currentUser == null) {
             return "redirect:/login";
-        } else {
+        }
+        else {
             model.addAllAttributes(this.accountService.prepareAccountView(currentUser.getUsername(), accountId));
             String message = (String)session.getAttribute("message");
             if (message != null) {
@@ -41,11 +42,12 @@ public class AccountController {
     }
 
     @PostMapping({"/accounts/create"})
-    public String createAccount(HttpSession session, @RequestParam String currency, @RequestParam Double initialBalance) {
+    public String createAccount(HttpSession session, @RequestParam String currency, @RequestParam int initialBalance) {
         User currentUser = (User)session.getAttribute("currentUser");
         if (currentUser == null) {
             return "redirect:/login";
-        } else {
+        }
+        else {
             this.accountService.createNewAccount(currentUser.getUsername(), currency, initialBalance);
             return "redirect:/account";
         }
@@ -56,7 +58,8 @@ public class AccountController {
         User currentUser = (User)session.getAttribute("currentUser");
         if (currentUser == null) {
             return "redirect:/login";
-        } else {
+        }
+        else {
             try {
                 this.accountService.deleteAccount(accountId, currentUser.getUsername());
                 session.setAttribute("message", "Account deleted successfully");

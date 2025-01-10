@@ -39,7 +39,7 @@ public class AccountService {
         return this.accountRepository.findByOwner(owner);
     }
 
-    public void createNewAccount(String owner, String currency, Double initialBalance) {
+    public void createNewAccount(String owner, String currency, int initialBalance) {
         Account account = new Account();
         account.setOwner(owner.toLowerCase());
         account.setCurrency(currency);

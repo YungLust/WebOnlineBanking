@@ -16,11 +16,11 @@ public class Account {
             strategy = GenerationType.IDENTITY
     )
     private Long id;
-    private Double balance;
+    private int balance;
     private String currency;
     private String owner;
 
-    public Account(Long id, Double balance, String currency, String owner) {
+    public Account(Long id, int balance, String currency, String owner) {
         this.id = id;
         this.balance = balance;
         this.currency = currency;
@@ -38,11 +38,11 @@ public class Account {
         this.id = id;
     }
 
-    public Double getBalance() {
+    public int getBalance() {
         return this.balance;
     }
 
-    public void setBalance(Double balance) {
+    public void setBalance(int balance) {
         this.balance = balance;
     }
 

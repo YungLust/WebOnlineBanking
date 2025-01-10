@@ -33,7 +33,8 @@ public class TransactionController {
         User currentUser = (User)session.getAttribute("currentUser");
         if (currentUser == null) {
             return "redirect:/login";
-        } else {
+        }
+        else {
             try {
                 this.transactionService.transfer(fromAccountId, toAccountId, amount, currentUser.getUsername());
                 session.setAttribute("message", "Transfer successful");
