@@ -17,7 +17,7 @@ public class TransactionController {
     }
 
     @PostMapping({"/account/deposit"})
-    public String deposit(@RequestParam Long accountId, @RequestParam Double amount, HttpSession session) {
+    public String deposit(@RequestParam Long accountId, @RequestParam int amount, HttpSession session) {
         try {
             this.transactionService.deposit(accountId, amount);
             session.setAttribute("message", "Deposit successful");
@@ -29,7 +29,7 @@ public class TransactionController {
     }
 
     @PostMapping({"/accounts/transfer"})
-    public String transferMoney(HttpSession session, @RequestParam Long fromAccountId, @RequestParam Long toAccountId, @RequestParam Double amount) {
+    public String transferMoney(HttpSession session, @RequestParam Long fromAccountId, @RequestParam Long toAccountId, @RequestParam int amount) {
         User currentUser = (User)session.getAttribute("currentUser");
         if (currentUser == null) {
             return "redirect:/login";

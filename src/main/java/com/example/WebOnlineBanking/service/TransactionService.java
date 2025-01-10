@@ -12,7 +12,7 @@ public class TransactionService {
     private AccountRepository accountRepository;
 
     @Transactional
-    public void deposit(Long accountId, Double amount) {
+    public void deposit(Long accountId, int amount) {
         if (amount <= 0.0) {
             throw new IllegalArgumentException("Amount must be greater than zero");
         }
@@ -25,8 +25,8 @@ public class TransactionService {
     }
 
     @Transactional
-    public void transfer(Long fromAccountId, Long toAccountId, Double amount, String owner) {
-        if (amount <= 0.0) {
+    public void transfer(Long fromAccountId, Long toAccountId, int amount, String owner) {
+        if (amount <= 0) {
             throw new IllegalArgumentException("Amount must be greater than zero");
         }
 
