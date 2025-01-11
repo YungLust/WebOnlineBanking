@@ -64,7 +64,7 @@ public class TransactionService {
             if (!fromAccount.getOwner().equals(owner)) {
                 throw new SecurityException("You are not authorized to transfer from this account");
             }
-            else if (fromAccount.getBalance() < currencyAmount) {
+            else if (fromAccount.getBalance() < amount) {
                 throw new IllegalArgumentException("Not enough money on your balance");
             }
 
