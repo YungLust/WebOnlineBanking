@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class AccountController {
+
+    final int defaultBalance = 200;
+
     @Autowired
     private AccountService accountService;
 
@@ -37,18 +40,19 @@ public class AccountController {
     }
 
     @GetMapping({"/accounts/create"})
-    public String showCreateAccountPage() {
+    public String showCreateAccountPage(Model model) {
+        model.addAttribute("defaultBalance", defaultBalance);
         return "create-account";
     }
 
     @PostMapping({"/accounts/create"})
-    public String createAccount(HttpSession session, @RequestParam String currency, @RequestParam int initialBalance) {
+    public String createAccount(HttpSession session, @RequestParam String currency) {
         User currentUser = (User)session.getAttribute("currentUser");
         if (currentUser == null) {
             return "redirect:/login";
         }
         else {
-            this.accountService.createNewAccount(currentUser.getUsername(), currency, initialBalance);
+            this.accountService.createNewAccount(currentUser.getUsername(), currency, defaultBalance);
             return "redirect:/account";
         }
     }
