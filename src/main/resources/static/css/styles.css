@@ -14,11 +14,14 @@ body {
     font-weight: 400;
     margin: 0;
     padding: 0;
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     background-color: var(--gray);
+}
+.no-scroll{
+    height: 100vh;
 }
 
 .error-message {
@@ -37,6 +40,28 @@ h1 {
     font-weight: 500;
     margin: 15px;
     color: var(--blue);
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 500;
+    margin: 10px;
+    color: var(--blue);
+}
+
+
+/* ————    Main page buttons   ———— */
+
+.center-buttons-container {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    align-items: stretch;
+    width: 100vh;
+}
+
+.a-btn-mid{
+    width: 20%;
 }
 
 
@@ -61,35 +86,15 @@ h1 {
 }
 
 
-/* ————    <a> Button styles    ———— */
+/* ————    Simple <a> link style    ———— */
 
-.buttons-container {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-}
-
-.btn {
-    display: inline-block; /* Ensure the <a> behaves like a block for width and padding */
+a.link {
+    color: var(--blue);
     text-decoration: none;
-    background-color: white;
-    color: black;
-    font-size: 18px;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    width: 150px;
-    padding: 15px;
-    margin: 15px;
-    cursor: pointer;
-    box-shadow: 0 0 0 transparent;
-    transition: all 0.3s ease-in-out;
 }
 
-.btn:hover {
-    border: solid 1px var(--blue);
-    box-shadow: 0 0 5px #2aefe7aa, 0 0 20px var(--blue);
-    transform: scale(1.05);
+a.link:hover {
+    text-decoration: underline;
 }
 
 
@@ -98,6 +103,7 @@ h1 {
 .form-container {
     display: flex;
     height: auto;
+    min-width: 300px;
     aspect-ratio: 1 / 1;
     align-content: space-between;
     flex-direction: column;
@@ -110,8 +116,9 @@ h1 {
 }
 
 input {
+    font-family: "Lexend", sans-serif;
     background-color: var(--blue-white);
-    width: 300px;
+    width: 80%;
     padding: 15px;
     margin: 10px;
     border: none;
@@ -127,45 +134,58 @@ input:focus {
     box-shadow: 0 0 10px var(--blue);
 }
 
-.submit-btn {
-    box-sizing: content-box; /* apply box-sizing so btn have the same width as input */
-    background-color: var(--blue-white);
-    color: black;
+.submit-btn, .a-btn, .a-btn-mid {
+    box-sizing: border-box; /* Ensures buttons are same size as forms */
+    display: inline-block; /* Ensure <a> behaves like a block element */
+    text-decoration: none;
     font-size: 16px;
     font-weight: 500;
+    font-family: "Lexend",sans-serif;
     border: none;
     border-radius: 8px;
-    width: 300px;
     padding: 15px;
     margin: 15px;
     cursor: pointer;
+    text-align: center;
+    background-color: var(--blue-white);
+    color: black;
     box-shadow: 0 1px 2px -1px var(--light-gray);
     transition: all 0.3s ease-in-out;
 }
 
-.submit-btn:hover {
+.submit-btn:hover, .a-btn:hover, .a-btn-mid:hover {
     border: solid 1px var(--blue);
     box-shadow: 0 0 15px var(--blue);
     transform: scale(1.05);
 }
 
-
-/* ————    Simple <a> link style    ———— */
-
-a.link {
-    color: var(--blue);
-    text-decoration: none;
+form{
+    display: flex;
+    align-content: stretch;
+    flex-direction: column;
 }
 
-a.link:hover {
-    text-decoration: underline;
+input[type="hidden"]{
+    display: none;
+}
+
+/* disable shitty arrows on number field*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"]{
+    -moz-appearance: textfield;
+    -webkit-appearance: none;
 }
 
 
 /* ————    Selector style    ———— */
 
 select {
-    padding: 10px;
+    padding: 15px;
+    margin: 15px;
     box-sizing: border-box;
     border-radius: 8px;
     background: var(--blue-white);
@@ -194,7 +214,7 @@ select:focus {
 /* ————    Currency selection styles    ———— */
 
 .balance-field {
-    padding: 5px 25px;
+    padding: 10px 25px;
     background-color: var(--blue-white);
     font-size: 24px;
     border-radius: 8px;
@@ -207,4 +227,37 @@ select:focus {
     align-items: center;
     margin: 15px;
     gap: 10px;
+}
+
+
+/* ————    Account page styles    ———— */
+
+.account-page{
+    display: flex;
+    margin: 20px;
+    gap: 20px;
+}
+
+p.info{
+    color: white;
+}
+
+span.info{
+    font-weight: 500;
+    color: var(--blue);
+}
+
+
+
+/* ————    Account control buttons styles    ———— */
+
+.buttons-container{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: row;
+}
+.danger{
+
 }
