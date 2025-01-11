@@ -1,25 +1,35 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ThyBal |  Create account</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+
+    <!-- link css -->
+    <link rel="stylesheet" type="text/css" media="all"
+          href="../static/css/styles.css" th:href="@{/css/styles.css}" />
+
 </head>
 <body>
+<div class="form-container">
 <h1>Create Account</h1>
 <form th:action="@{/accounts/create}" method="post">
-    <label for="currency">Currency:</label>
-    <select id="currency" name="currency" required>
-        <option value="USD">USD</option>
-        <option value="EUR">EUR</option>
-        <option value="UAH">UAH</option>
-    </select>
-    <br>
-    <label for="initialBalance">Initial Balance:</label>
-    <input type="number" id="initialBalance" name="initialBalance" placeholder="Initial Balance" required>
-    <br>
-    <button type="submit">Create Account</button>
+    <div class="currency-container">
+        <h5 th:text="${defaultBalance}" class="balance-field"></h5>
+        <select id="currency" name="currency" required>
+            <option value="UAH" selected="selected">₴ UAH</option>
+            <option value="EUR">€ EUR</option>
+            <option value="USD">$ USD</option>
+            <option value="YEN">¥ YEN</option>
+        </select>
+    </div>
+    <button type="submit" class="submit-btn">Create Account</button>
 </form>
-<p><a th:href="@{/account}">Back to Account</a></p>
+<p><a class="link" th:href="@{/account}">Back to Account</a></p>
+</div>
+
 </body>
 </html>
